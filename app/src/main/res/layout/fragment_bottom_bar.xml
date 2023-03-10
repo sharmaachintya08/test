@@ -14,6 +14,7 @@
         android:background="@drawable/inner_rectangle"
         android:padding="@dimen/_6sdp">
         <ImageView
+            android:id="@+id/playlist_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
@@ -21,6 +22,7 @@
             android:padding="@dimen/_3sdp"
             android:layout_margin="@dimen/_3sdp"/>
         <ImageView
+            android:id="@+id/currentSong"
             android:layout_margin="@dimen/_3sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
