@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".Fragments.SongPlay.SongPlaying"
     android:orientation="vertical">
 
@@ -12,7 +12,8 @@
         android:layout_height="310dp"
         tools:layout_editor_absoluteX="34dp"
         tools:layout_editor_absoluteY="27dp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_launcher_foreground"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,17 +24,23 @@
             android:id="@+id/songName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="3"/>
+            android:text="song name"
+            android:layout_weight="3"
+            android:layout_gravity="center_horizontal"/>
         <TextView
             android:id="@+id/songTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="3"/>
+            android:layout_weight="3"
+            android:text="2:34"
+            android:layout_gravity="center_horizontal"/>
         <TextView
             android:id="@+id/songSinger"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="3"/>
+            android:layout_weight="3"
+            android:text="song singer"
+            android:layout_gravity="center_horizontal"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,16 +51,19 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/previous_vector"
             android:layout_weight="3" />
         <ImageView
             android:id="@+id/playpause_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/song_play"
             android:layout_weight="3" />
         <ImageView
             android:id="@+id/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/next_vector"
             android:layout_weight="3" />
     </LinearLayout>
 </LinearLayout>
