@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".Fragments.SongPlay.SongPlaying"
     android:orientation="vertical">
 
@@ -13,13 +13,15 @@
         tools:layout_editor_absoluteX="34dp"
         tools:layout_editor_absoluteY="27dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="120dp"
         android:src="@drawable/ic_launcher_foreground"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:weightSum="9"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp">
         <TextView
             android:id="@+id/songName"
             android:layout_width="wrap_content"
@@ -33,6 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:text="2:34"
+            android:layout_marginTop="4dp"
             android:layout_gravity="center_horizontal"/>
         <TextView
             android:id="@+id/songSinger"
@@ -40,26 +43,28 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:text="song singer"
+            android:layout_marginTop="4dp"
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:weightSum="9">
-        <ImageView
+        android:weightSum="9"
+        android:layout_marginTop="120dp">
+        <ImageButton
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/previous_vector"
             android:layout_weight="3" />
-        <ImageView
+        <ImageButton
             android:id="@+id/playpause_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/song_play"
             android:layout_weight="3" />
-        <ImageView
+        <ImageButton
             android:id="@+id/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
