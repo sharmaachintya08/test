@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.emptyactivity.R
 
 
-class RecyclerAdapter(private val dataSet : Array<DataModel>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter(private val dataSet : ArrayList<DataModel>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val songImage : ImageView
         val songName : TextView
