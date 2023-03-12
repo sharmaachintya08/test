@@ -4,32 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:orientation="vertical"
-    android:weightSum="7">
+    android:weightSum="7"
+    tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/upper_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/upper_fragment"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/bottom_fragment"
+        android:name="com.example.emptyactivity.Fragments.BottomBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="6">
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/bottom_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:name="com.example.emptyactivity.Fragments.BottomBar"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_weight="6"/>
 </LinearLayout>
