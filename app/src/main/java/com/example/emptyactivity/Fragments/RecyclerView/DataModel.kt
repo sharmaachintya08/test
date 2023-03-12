@@ -1,4 +1,8 @@
 package com.example.emptyactivity.Fragments.RecyclerView
 
-class DataModel {
-}
+data class DataModel(
+    val songImage : String?,
+    val songName : String,
+    val songTime : String,
+    val songArtist : String
+)
