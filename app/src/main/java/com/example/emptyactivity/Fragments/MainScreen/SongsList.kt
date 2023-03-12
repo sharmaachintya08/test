@@ -39,6 +39,15 @@ class SongsList : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
         val dataSet = ArrayList<DataModel>()
+
+        dataSet.add(DataModel(null,"song1","2:34","achintya"))
+        dataSet.add(DataModel(null,"song1","2:34","achintya"))
+        dataSet.add(DataModel(null,"song1","2:34","achintya"))
+        dataSet.add(DataModel(null,"song1","2:34","achintya"))
+        dataSet.add(DataModel(null,"song1","2:34","achintya"))
+        dataSet.add(DataModel(null,"song1","2:34","achintya"))
+
+
         recyclerView.adapter = RecyclerAdapter(dataSet)
         return view
     }

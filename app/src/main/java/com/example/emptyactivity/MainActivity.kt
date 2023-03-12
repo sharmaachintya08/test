@@ -8,7 +8,6 @@ import com.example.emptyactivity.Fragments.MainScreen.SongsList
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    private var firstUpperFragment : Fragment? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

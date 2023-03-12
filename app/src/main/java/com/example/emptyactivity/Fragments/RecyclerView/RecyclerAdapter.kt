@@ -32,7 +32,9 @@ class RecyclerAdapter(private val dataSet : ArrayList<DataModel>) : RecyclerView
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
+        holder.songName.setText(dataSet[position].songName)
+        holder.songTime.setText(dataSet[position].songTime)
+        holder.songSinger.setText(dataSet[position].songArtist)
     }
 
     override fun getItemCount(): Int {return dataSet.size}
