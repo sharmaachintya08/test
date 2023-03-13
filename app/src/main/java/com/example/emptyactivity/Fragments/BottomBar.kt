@@ -1,20 +1,28 @@
 package com.example.emptyactivity.Fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import com.example.emptyactivity.R
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class BottomBar : Fragment() {
-    // TODO: Rename and change types of parameters
+class BottomBar : Fragment(){
     private var param1: String? = null
     private var param2: String? = null
 
+    private var playlistList : ImageView? = null
+    private var currentSong : ImageView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -31,8 +39,22 @@ class BottomBar : Fragment() {
         return inflater.inflate(R.layout.fragment_bottom_bar, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        playlistList = view.findViewById(R.id.playlist_list)
+        currentSong = view.findViewById(R.id.currentSong)
+        playlistList?.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(p0: View?) {
+
+            }
+        })
+        currentSong?.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(p0: View?) {
+
+            }
+        })
+    }
     companion object {
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             BottomBar().apply {
