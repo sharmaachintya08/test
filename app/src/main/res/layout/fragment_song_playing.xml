@@ -52,23 +52,33 @@
         android:orientation="horizontal"
         android:weightSum="9"
         android:layout_marginTop="120dp">
+
         <ImageButton
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/previous_vector"
-            android:layout_weight="3" />
+            android:layout_weight="3"
+            android:contentDescription="back"
+            android:minHeight="48dp"
+            android:src="@drawable/previous_vector" />
+
         <ImageButton
             android:id="@+id/playpause_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/song_play"
-            android:layout_weight="3" />
+            android:layout_weight="3"
+            android:contentDescription="playpause"
+            android:minHeight="48dp"
+            android:src="@drawable/song_play" />
+
         <ImageButton
             android:id="@+id/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/next_vector"
-            android:layout_weight="3" />
+            android:layout_weight="3"
+            android:contentDescription="next"
+            android:hint="next"
+            android:minHeight="48dp"
+            android:src="@drawable/next_vector" />
     </LinearLayout>
 </LinearLayout>

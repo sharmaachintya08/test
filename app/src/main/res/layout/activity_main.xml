@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/outer_app_color"/>
 
-    <androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/bottom_fragment"
         android:name="com.example.emptyactivity.Fragments.BottomBar"
         android:layout_width="match_parent"
