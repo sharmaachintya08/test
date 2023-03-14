@@ -2,6 +2,7 @@ package com.example.emptyactivity.Fragments
 
 import android.content.ClipData
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -25,9 +26,11 @@ import com.example.emptyactivity.R
 
 class BottomBar : Fragment(){
 
-    private var playlistList : ImageView? = null
+    var playlistList : ImageView? = null
     private var currentSong : ImageView? = null
 
+    private val greenVal = Color.parseColor("#239B56")
+    private val whiteVal = Color.parseColor("#FDFEFE")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +43,7 @@ class BottomBar : Fragment(){
         super.onViewCreated(view, savedInstanceState)
         playlistList = view.findViewById(R.id.playlist_list)
         currentSong = view.findViewById(R.id.currentSong)
+        playlistList?.drawable?.setTint(greenVal)
         playlistList?.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
                 val fragment = SongsList()
@@ -47,6 +51,8 @@ class BottomBar : Fragment(){
                     .replace(R.id.upper_fragment,fragment)
                     .addToBackStack("songListFragment")
                     .commit()
+                playlistList?.drawable?.setTint(greenVal)
+                currentSong?.drawable?.setTint(whiteVal)
             }
         })
         currentSong?.setOnClickListener(object : View.OnClickListener{
@@ -56,6 +62,9 @@ class BottomBar : Fragment(){
                     .replace(R.id.upper_fragment,fragment)
                     .addToBackStack("songListFragment")
                     .commit()
+                val colorVal = Color.parseColor("#239B56")
+                currentSong?.drawable?.setTint(greenVal)
+                playlistList?.drawable?.setTint(whiteVal)
             }
         })
     }

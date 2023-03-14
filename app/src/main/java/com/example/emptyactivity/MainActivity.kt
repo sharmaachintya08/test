@@ -1,5 +1,6 @@
 package com.example.emptyactivity
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun displayFragment(){
         supportFragmentManager.beginTransaction()
-            .replace(R.id.upper_fragment,SongPlaying())
+            .replace(R.id.upper_fragment,SongsList())
             .addToBackStack("songListFragment")
             .commit()
     }
