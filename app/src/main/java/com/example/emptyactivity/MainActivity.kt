@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun displayFragment(){
         supportFragmentManager.beginTransaction()
-            .replace(R.id.upper_fragment,SongsList())
+            .replace(R.id.upper_fragment,SongPlaying())
             .addToBackStack("songListFragment")
             .commit()
     }

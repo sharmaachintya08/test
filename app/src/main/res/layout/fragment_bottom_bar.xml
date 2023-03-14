@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".Fragments.BottomBar"
-    android:background="@drawable/outer_rectangle"
     android:padding="@dimen/_6sdp">
     <LinearLayout
         android:layout_width="match_parent"

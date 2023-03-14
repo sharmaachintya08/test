@@ -4,28 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/outer_app_color"
     android:orientation="vertical"
-    android:weightSum="7"
     tools:context=".MainActivity"
-    android:background="@color/outer_app_color">
+    android:padding="20dp"
+    android:weightSum="10">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/upper_fragment"
+        android:name="com.example.emptyactivity.Fragments.MainScreen.SongsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/outer_app_color"/>
+        android:background="@color/outer_app_color"
+        tools:layout="@layout/fragment_song_playing"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_weight="1"/>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/bottom_fragment"
         android:name="com.example.emptyactivity.Fragments.BottomBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="6"
         android:background="@color/outer_app_color"
-        android:layout_marginTop="20dp"/>
+        tools:layout="@layout/fragment_bottom_bar"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="644dp"
+        android:layout_marginTop="2dp"
+        android:layout_weight="6"/>
 </LinearLayout>

@@ -33,7 +33,12 @@ class SongsList : Fragment() {
         dataSet.add(DataModel(null,"song1","2:34","achintya"))
         dataSet.add(DataModel(null,"song1","2:34","achintya"))
         dataSet.add(DataModel(null,"song1","2:34","achintya"))
-
+        dataSet.add(DataModel(null,"song1","2:34","achintya"))
+        dataSet.add(DataModel(null,"song1","2:34","achintya"))
+        dataSet.add(DataModel(null,"song1","2:34","achintya"))
+        dataSet.add(DataModel(null,"song1","2:34","achintya"))
+        dataSet.add(DataModel(null,"song1","2:34","achintya"))
+        dataSet.add(DataModel(null,"song1","2:34","achintya"))
 
         recyclerView.adapter = RecyclerAdapter(dataSet)
         return view
