@@ -1,5 +1,7 @@
 package com.example.emptyactivity.Fragments
 
+import android.content.ClipData
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,12 +12,17 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.core.os.bundleOf
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.viewModels
+import com.example.emptyactivity.ItemViewModel
 import com.example.emptyactivity.R
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
 
 class BottomBar : Fragment(){
     private var param1: String? = null
@@ -23,6 +30,10 @@ class BottomBar : Fragment(){
 
     private var playlistList : ImageView? = null
     private var currentSong : ImageView? = null
+
+    private val fragmentViewModel : ItemViewModel by viewModels()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -45,12 +56,14 @@ class BottomBar : Fragment(){
         currentSong = view.findViewById(R.id.currentSong)
         playlistList?.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
-
+                Toast.makeText(context,"clicked playlist",Toast.LENGTH_SHORT).show()
+                fragmentViewModel.selectedItem("playlistList")
             }
         })
         currentSong?.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
-
+                Toast.makeText(context,"clicked currentSong",Toast.LENGTH_SHORT).show()
+                fragmentViewModel.selectedItem("currentSong")
             }
         })
     }
