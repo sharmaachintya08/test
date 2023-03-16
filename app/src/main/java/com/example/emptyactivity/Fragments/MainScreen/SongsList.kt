@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.ContactsContract.Data
 import android.provider.MediaStore
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -52,23 +53,28 @@ class SongsList : Fragment() {
             MediaStore.Audio.Media.DATE_ADDED
         )
         val cursor  =  context?.contentResolver?.query(
-            MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,projection,selection,null,
-            MediaStore.Audio.Media.DATE_ADDED + " DESC",null)
-        if(cursor != null){
-            if(cursor.moveToFirst()){
-                do{
-                    val title = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE))
-                    val id = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID))
-                    val artist = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST))
-                    val duration = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION))
-                    val path = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA))
-                    val album = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM))
-                    val music = DataModel(songImage = album,songId = id,songName = title, songTime = duration, songArtist = artist, songPath = path)
-                    val file = File(music.songPath)
-                    if(file.exists()) tempList.add(music)
-                }while(cursor.moveToNext())
+            MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+            projection,
+            selection,
+            null,
+            MediaStore.Audio.Media.DATE_ADDED + " DESC",
+            null
+        )?.use{ cursor ->
+            while(cursor.moveToNext()){
+                val title = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE))
+                val id = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID))
+                val artist = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST))
+                val duration = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION))
+                val path = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA))
+                val album = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM))
+                val music = DataModel(songImage = album,songId = id,songName = title, songTime = duration, songArtist = artist, songPath = path)
+                val file = File(music.songPath)
+                if(file.exists()) tempList.add(music)
             }
         }
         return tempList
+    }
+    fun getMusicF(){
+
     }
 }
