@@ -33,7 +33,7 @@ class RecyclerAdapter(private val dataSet : ArrayList<DataModel>) : RecyclerView
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.songName.setText(dataSet[position].songName)
-        holder.songTime.setText(dataSet[position].songTime)
+        holder.songTime.setText(dataSet[position].songTime.toString())
         holder.songSinger.setText(dataSet[position].songArtist)
     }
 
